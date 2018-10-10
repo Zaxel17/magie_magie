@@ -8,3 +8,11 @@ and open the template in the editor.
     Author     : Administrateur
 */
 
+h1{
+    text-align: center;
+}
+
+td{
+    height: 50px;
+    width: 50px;
+}
