@@ -30,6 +30,59 @@ td{
     width: 50px;
 }
 
-a{
-    color: whitesmoke;
+label{
+    color : #250404;
+}
+
+#formHome{
+  
+}
+
+#formAvatar{ 
+
+}
+
+#formPseudo{
+
+}
+
+#mainListePartie{
+
+}
+
+#listeDesParties{
+ 
+}
+
+#creerPartie{
+
+}
+
+#mainLobby{
+    
+}
+
+#listeDesJoueurs{
+
+}
+
+#lancerPartie{
+
+}
+
+
+.contenant{
+    display: flex;
+    align-items:center;
+    justify-content:space-around;
+    flex-direction: row;
+}
+
+.contenu{
+    background-color: whitesmoke;
+    opacity: 0.75;
+    width: 500px;
+    margin-top: 300px;
+    padding: 10px;
+    border-radius: 20%;
 }

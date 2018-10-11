@@ -5,14 +5,14 @@
  */
 
 function validerInscription(){
-    var s = $('#pseudo').val()
-    alert("Inscription Valider\nBonjour : "+s);
+//    var s = $('#pseudo').val()
+//    alert("Inscription Valider\nBonjour : "+s);
     document.location.href="listePartie.html";
 }
 
 function creerPartie(){
-    var s = $('#titrePartie').val()
-    alert("Partie Creer !\n"+s);
+//    var s = $('#titrePartie').val()
+//    alert("Partie Creer !\n"+s);
     document.location.href="lobby.html";
 }
 

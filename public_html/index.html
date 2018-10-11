@@ -18,16 +18,9 @@ and open the template in the editor.
         <link href="css/style.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
-        <main>
-            <a href="listePartie.html">Liste partie</a>
-            <a href="lobby.html">Lobby</a>
-            <a href="index.html">Home</a>
-            <form>
-                <div id="formPseudo">
-                    <label>Selectionné votre pseudo : </label>
-                    <input type="text" id="pseudo" >
-                </div>
-                <div id="formAvatar">
+        <main >
+            <form id="formHome" class="contenant">
+                <div id="formAvatar" class="contenu">
                     <label>Selectionner votre avatar :</label>
                     <table border="1"> Ceci vas devenir une carousel
                         <tbody>
@@ -41,7 +34,9 @@ and open the template in the editor.
                         </tbody>
                     </table>
                 </div>
-                <div id="formValider">
+                <div id="formPseudo" class="contenu">
+                    <label>Selectionné votre pseudo : </label>
+                    <input type="text" id="pseudo" >
                     <input type=button value="Valider" onclick="validerInscription()">
                 </div>
             </form>
