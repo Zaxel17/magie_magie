@@ -13,14 +13,19 @@ and open the template in the editor.
     </head>
     <body>
         <main>
-        <form id="mainLobby" class="contenant">        
-            <div id="listeDesJoueurs" class="contenu">
-                Liste des joueurs
-            </div>
-            <div id="lancerPartie" class="contenu">
-                <input type="button" value="Lancer la partie" onclick="lancerPartie()">
-            </div>
-        </form>
+            <form id="formLobby" class="contenant">        
+                <div id="listeDesJoueurs" class="contenu">
+                    Liste des joueurs :
+                    <ul>
+                        <li>Joueur test 1 </li>
+                        <li>Joueur test 2</li>
+                        <li>Joueur test 3</li>
+                    </ul>
+                </div>
+                <div id="lancerPartie" class="contenu divButtonValidation">
+                    <input type="button" value="Lancer la partie" onclick="lancerPartie()">
+                </div>
+            </form>
         </main>
         <footer>Copyright 2018   JC | Axel</footer>
         <script src="js/jquery-3.3.1.js" type="text/javascript"></script>

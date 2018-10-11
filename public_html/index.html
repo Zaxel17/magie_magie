@@ -20,29 +20,68 @@ and open the template in the editor.
     <body>
         <main >
             <form id="formHome" class="contenant">
-                <div id="formAvatar" class="contenu">
+                <div id="formAvatar">
                     <label>Selectionner votre avatar :</label>
-                    <table border="1"> Ceci vas devenir une carousel
-                        <tbody>
-                            <tr>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                        </tbody>
-                    </table>
+                    <br>
+                    <div class="carousel">
+                    </div>
                 </div>
                 <div id="formPseudo" class="contenu">
                     <label>Selectionné votre pseudo : </label>
                     <input type="text" id="pseudo" >
-                    <input type=button value="Valider" onclick="validerInscription()">
+                    <div class="divButtonValidation">
+                        <input id="buttonIndex" type=button value="Valider" onclick="validerInscription()">
+                    </div>
                 </div>
             </form>
         </main>
         <footer>Copyright 2018   JC | Axel</footer>
         <script src="js/jquery-3.3.1.js" type="text/javascript"></script>
         <script src="js/script.js" type="text/javascript"></script>
+        <script src="js/jR3DCarousel.min.js" type="text/javascript"></script>
+        <script>
+            var slides = [
+                {src: 'img/avatars/avatar_1.png'},
+                {src: 'img/avatars/avatar_2.png'},
+                {src: 'img/avatars/avatar_3.png'},
+                {src: 'img/avatars/avatar_4.png'},
+                {src: 'img/avatars/avatar_5.png'},
+                {src: 'img/avatars/avatar_6.png'},
+                {src: 'img/avatars/avatar_7.png'},
+                {src: 'img/avatars/avatar_8.png'}
+            ];
+            $('.carousel').jR3DCarousel({
+                // width of the carousel
+                width: 200,
+                // height of the carousel
+                height: 300,
+                // an array of images
+                slides: slides,
+                // contain | fill | cover
+                slideLayout: 'fill',
+                // perspective | default dynamic perpendicular
+                perspective: 0,
+                // slide | slide3D | scroll | scroll3D | fade
+                animation: 'fade',
+                // ease | ease-in | ease-out | ease-in-out | linear | bezier
+                animationCurve: 'ease',
+                // animation duration
+                animationDuration: 700,
+                // animation interval
+                animationInterval: 2000,
+                // enable autoplay
+                autoplay: true,
+                // display controls
+                controls: true,
+                slideClass: 'jR3DCarouselSlide',
+                // circles | squares
+                navigation: 'squares',
+                // callback
+                onSlideShow: function () {}
+            });
+            
+        </script>
+            
+        
     </body>
 </html>

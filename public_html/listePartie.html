@@ -13,14 +13,23 @@ and open the template in the editor.
     </head>
     <body>
         <main>
-        <form id="mainListePartie" class="contenant">
-            <div id="listeDesParties" class="contenu">Liste des Parties</div>
-            <div id="creerPartie" class="contenu">
-                <label>Creer une partie</label>
-                <input id="titrePartie" type="text">
-                <input type="button" value="Creer une partie" onClick="creerPartie()">
-            </div>
-        </form>
+            <form id="formListePartie" class="contenant">
+                <div id="listeDesParties" class="contenu">
+                    Liste des parties disponible :
+                    <ul>
+                        <li> Partie test 1 </li>
+                        <li> Partie test 2</li>
+                        <li> Partie test 3</li>
+                    </ul>
+                </div>
+                <div id="creerPartie" class="contenu">
+                    <label>Creer une partie</label>
+                    <input id="titrePartie" type="text">
+                    <div class="divButtonValidation">
+                        <input type="button" value="Creer une partie" onClick="creerPartie()">
+                    </div>
+                </div>
+            </form>
         </main>  
         <footer>Copyright 2018   JC | Axel</footer>
         <script src="js/jquery-3.3.1.js" type="text/javascript"></script>

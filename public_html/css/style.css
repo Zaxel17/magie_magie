@@ -8,14 +8,12 @@ and open the template in the editor.
     Author     : Administrateur
 */
 body{
-    background-color: #250404;
-    position: top;
+    background-color: #250404; 
 }
 
 main {
     background-image: url('img/fond_accueil.jpg'); 
     background-repeat: no-repeat; 
-    
     height: 1080px;
     width: 1920px;
 }
@@ -28,61 +26,76 @@ footer{
 td{
     height: 50px;
     width: 50px;
+    background-color: white;
 }
 
-label{
-    color : #250404;
+td:hover{
+    background-color: black;
 }
 
-#formHome{
-  
+input{
+    font-size: x-large;
+    margin: 10px;
 }
 
-#formAvatar{ 
-
+li{
+  font: 200 20px/1.5 Helvetica, Verdana, sans-serif;
+  border-bottom: 1px solid #ccc;
 }
 
-#formPseudo{
-
+li:last-child {
+  border: none;
 }
 
-#mainListePartie{
-
+li:hover{
+    background-color: black;
+    color: white;
 }
-
-#listeDesParties{
- 
-}
-
-#creerPartie{
-
-}
-
-#mainLobby{
-    
-}
-
-#listeDesJoueurs{
-
-}
-
-#lancerPartie{
-
-}
-
 
 .contenant{
     display: flex;
     align-items:center;
     justify-content:space-around;
     flex-direction: row;
+    font-size: x-large;
 }
 
 .contenu{
     background-color: whitesmoke;
-    opacity: 0.75;
+    opacity: 0.9;
+    width: 300px;
+    margin-top: 300px;
+    padding: 20px;
+    border-style: solid;
+    border-radius: 25%;
+    text-align: center;
+}
+
+.divButtonValidation{
+    text-align: center;
+}
+
+#pseudo{
+    font-size: x-large;
+    width: 200px;
+}
+
+#formAvatar{
+    background-color: whitesmoke;
+    opacity: 0.9;
     width: 500px;
     margin-top: 300px;
-    padding: 10px;
-    border-radius: 20%;
+    padding: 20px;
+    border-style: solid;
+    border-radius: 25%; 
+    text-align: center;
+}
+
+.carousel{
+    text-align: center;
+    
+}
+
+li{
+    text-align: left;
 }
