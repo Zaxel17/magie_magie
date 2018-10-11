@@ -7,12 +7,29 @@ and open the template in the editor.
     Created on : 10 oct. 2018, 16:00:32
     Author     : Administrateur
 */
+body{
+    background-color: #250404;
+    position: top;
+}
 
-h1{
-    text-align: center;
+main {
+    background-image: url('img/fond_accueil.jpg'); 
+    background-repeat: no-repeat; 
+    
+    height: 1080px;
+    width: 1920px;
+}
+
+footer{
+   background-color: #FF5700;
+   width: 1920px;
 }
 
 td{
     height: 50px;
     width: 50px;
+}
+
+a{
+    color: whitesmoke;
 }

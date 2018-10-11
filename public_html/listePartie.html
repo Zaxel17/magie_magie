@@ -6,15 +6,26 @@ and open the template in the editor.
 -->
 <html>
     <head>
-        <title>TODO supply a title</title>
+        <title>MM - Liste des partiess</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="css/style.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
-        <header>AVATAR<h1>Magie Magie</h1></header>
-        <div>Liste des Parties</div>
-        <div>Creer une partie</div>
+        <main>
+            <a href="listePartie.html">liste partie</a>
+            <a href="lobby.html">Lobby</a>
+            <a href="index.html">Home</a>
+            
+            <div id="ListeDesParties">Liste des Parties</div>
+            <div id="CreerPartie">
+                <label>Creer une partie</label>
+                <input id="titrePartie" type="text">
+                <input type="button" value="Creer une partie" onClick="creerPartie()">
+            </div>
+        </main>
         <footer>Copyright 2018   JC | Axel</footer>
+        <script src="js/jquery-3.3.1.js" type="text/javascript"></script>
+        <script src="js/script.js" type="text/javascript"></script>
     </body>
 </html>

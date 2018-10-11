@@ -12,32 +12,42 @@ and open the template in the editor.
 
 <html>
     <head>
-        <title>Home</title>
+        <title>MM - Login</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="css/style.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
-        <header><h1>Magie Magie</h1></header>
         <main>
+            <a href="listePartie.html">Liste partie</a>
+            <a href="lobby.html">Lobby</a>
+            <a href="index.html">Home</a>
             <form>
-                <label>Selectionné votre pseudo : </label>
-                <input type="text" >
-                <label>Selectionner votre avatar :</label>
-                <table border="1"> Ceci vas devenir une carousel
-                    <tbody>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                    </tbody>
-                </table>
-                <input type="submit" value="Valider">
+                <div id="formPseudo">
+                    <label>Selectionné votre pseudo : </label>
+                    <input type="text" id="pseudo" >
+                </div>
+                <div id="formAvatar">
+                    <label>Selectionner votre avatar :</label>
+                    <table border="1"> Ceci vas devenir une carousel
+                        <tbody>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div id="formValider">
+                    <input type=button value="Valider" onclick="validerInscription()">
+                </div>
             </form>
         </main>
         <footer>Copyright 2018   JC | Axel</footer>
+        <script src="js/jquery-3.3.1.js" type="text/javascript"></script>
+        <script src="js/script.js" type="text/javascript"></script>
     </body>
 </html>
