@@ -3,8 +3,348 @@ To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
 and open the template in the editor.
 */
-/* 
-    Created on : 10 oct. 2018, 16:00:51
-    Author     : Administrateur
+ 
+
+body {
+    background-color: #250404;
+}
+footer {
+    color : white;
+    text-align: center;
+}
+main {
+    width: 1920px;
+    height: 1080px;
+    margin: auto;
+}
+#tapis {
+    position: absolute;
+    top: 0px;
+    background-image: url('img/fond_tapis.jpg');
+    background-size: 1920px 1080px;
+    background-repeat : no-repeat;
+    width: 1920px;
+    height: 1080px;
+}
+
+/* CARTES */
+.carte_1, .carte_2, .carte_3, .carte_4, .carte_5, .carte_dos {
+    background-repeat : no-repeat;  
+}
+.carte_1 { /* Mandragore */
+    background-image: url('../img/cartes/carte_1.png'); 
+}
+.carte_2 { /* Lapis-lazuli */
+    background-image: url('../img/cartes/carte_2.png'); 
+}
+.carte_3 { /* Licorne */
+    background-image: url('../img/cartes/carte_3.png');   
+}
+.carte_4 { /* Chauve souris */
+    background-image: url('../img/cartes/carte_4.png'); 
+}
+.carte_5 { /* Crapaud */
+    background-image: url('../img/cartes/carte_5.png'); 
+}
+.carte_dos {
+    background-image: url('../img/cartes/carte_dos.png');
+    width: 100px;
+    height: 150px;
+    background-size: 100px 150px;
+}
+.taille_carte_mini {
+    width: 100px;
+    height: 150px;
+    background-size: 100px 150px;     
+}
+.taille_carte_normal {
+    width: 150px;
+    height: 225px;
+    background-size: 150px 225px;     
+}
+/* test rotation des cartes de dos des joueurs adverses */
+/* sorts */
+.sort_invisibilite, .sort_philtre, .sort_hypnose, .sort_divination, .sort_sommeil {
+width: 200px;
+height: 150px;
+margin : auto;
+position: absolute;
+}
+.taille_carte_sort {
+width: 100px;
+height: 150px;
+background-size: 100px 150px; 
+display: inline-block;
+}
+/*
+INVISIBILITE: le joueur prend 1 carte(au hasard) chez tous ses adversaires
+Ingrédients: corne de licorne (carte_3) + bave de crapaud (carte_5)
+*/
+.sort_invisibilite {
+top : 50px;
+right : 20px;
+}
+/*
+PHILTRE D’AMOUR: le joueur de votre choix vous donne la moitié de ses cartes(au hasard). S’il ne possède qu’une carte il a perdu:
+Ingrédients: corne de licorne (carte_3) + mandragore (carte_1)
+*/
+.sort_philtre {
+top : 266px;
+right : 20px;  
+}
+/*
+HYPNOSE: le joueur échange une carte de son choix contre trois cartes(au hasard) de la victime qu’il choisit
+Ingrédients: bave de crapaud (carte_5) + lapis-lazuli (carte_2)
+*/
+.sort_hypnose {
+top : 482px;
+right : 20px;  
+}
+/*
+DIVINATION: le joueur peut voir les cartes de tous les autres joueurs
+Ingrédients: lapis-lazuli (carte_2) + aile-de chauve-souris (carte_4)
+*/
+.sort_divination {
+top : 698px;
+right : 20px;  
+}
+/*
+SOMMEIL-PROFOND: le joueur choisit une victime qui ne pourra pas lancer de sorts pendant 2 tours
+Ingrédients: mandragore (carte_1) + aile de chauve-souris (carte_4)
+*/
+.sort_sommeil {
+top : 914px;
+right : 20px;   
+}
+
+/* AVATARS */
+.avatar_1, .avatar_2, .avatar_3, .avatar_4, .avatar_5, .avatar_6, .avatar_7, .avatar_8 {
+    background-repeat : no-repeat;  
+}
+.avatar_1 { background-image: url('../img/avatars/avatar_1.png'); }
+.avatar_2 { background-image: url('../img/avatars/avatar_2.png'); }
+.avatar_3 { background-image: url('../img/avatars/avatar_3.png'); }
+.avatar_4 { background-image: url('../img/avatars/avatar_4.png'); }
+.avatar_5 { background-image: url('../img/avatars/avatar_5.png'); }
+.avatar_6 { background-image: url('../img/avatars/avatar_6.png'); }
+.avatar_7 { background-image: url('../img/avatars/avatar_7.png'); }
+.avatar_8 { background-image: url('../img/avatars/avatar_8.png'); }
+
+.avatar_joueur {
+    background-size: 200px 300px;
+    position: absolute;
+    background-repeat : no-repeat;
+    width: 200px;
+    height: 300px;
+    top : 780px;
+    left : 220px; 
+}
+
+.avatar_joueur_adverse_1, .avatar_joueur_adverse_2, .avatar_joueur_adverse_3, .avatar_joueur_adverse_4 {
+    background-size: 150px 200px;
+    position: absolute;
+    background-repeat : no-repeat;
+    width: 150px;
+    height: 200px;
+    top : 200px;
+}
+.avatar_joueur_adverse_1 { left : 130px; }
+.avatar_joueur_adverse_2 { left : 530px; }
+.avatar_joueur_adverse_3 { left : 930px; }
+.avatar_joueur_adverse_4 { left : 1330px; }
+
+
+/* Positionnement des cartes des joueurs adverses */
+.cartes_joueur_adverse_1, .cartes_joueur_adverse_2, .cartes_joueur_adverse_3, .cartes_joueur_adverse_4 {
+    position: absolute;
+   /* background-color: green;  test */
+    top : 0px;
+    width: 400px;
+    height: 160px;
+}
+
+.cartes_joueur_adverse_1 { left : 0px;    }
+.cartes_joueur_adverse_2 { left : 400px;  }
+.cartes_joueur_adverse_3 { left : 800px;  }
+.cartes_joueur_adverse_4 { left : 1200px; }
+
+
+
+.position_carte {
+    list-style-type: none;
+    padding: 0;
+    margin: 0 0 1.5em 0;
+    font-size: 40px;
+}
+
+.position_carte li {
+    position: absolute;
+    bottom: 0;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    float: left;
+}
+
+
+.position_carte li:nth-child(1)  { left: -1em; }
+.position_carte li:nth-child(2)  { left: 0.1em; }
+.position_carte li:nth-child(3)  { left: 1.2em; }
+.position_carte li:nth-child(4)  { left: 2.3em; }
+.position_carte li:nth-child(5)  { left: 3.4em; }
+.position_carte li:nth-child(6)  { left: 4.5em; }
+.position_carte li:nth-child(7)  { left: 5.6em; }
+.position_carte li:nth-child(8)  { left: 6.7em; }
+.position_carte li:nth-child(9)  { left: 7.8em; }
+.position_carte li:nth-child(10) { left: 8.9em; }
+.position_carte li:nth-child(11) { left: 10em; }
+.position_carte li:nth-child(12) { left: 11.1em; }
+.position_carte li:nth-child(13) { left: 12.2em; }
+.position_carte li:nth-child(14) { left: 13.3em; }
+.position_carte li:nth-child(15) { left: 14.4em; }
+.position_carte li:nth-child(16) { left: 15.5em; }
+.position_carte li:nth-child(17) { left: 16.6em; }
+.position_carte li:nth-child(18) { left: 17.7em; }
+.position_carte li:nth-child(19) { left: 18.8em; }
+.position_carte li:nth-child(20) { left: 19.9em; }
+.position_carte li:nth-child(21) { left: 21em; }
+.position_carte li:nth-child(22) { left: 22.1em; }
+.position_carte li:nth-child(23) { left: 23.2em; }
+.position_carte li:nth-child(24) { left: 24.3em; }
+.position_carte li:nth-child(25) { left: 25.4em; }
+.position_carte li:nth-child(26) { left: 26.5em; }
+
+.position_carte.rotation_bas li:nth-child(1) {
+    -moz-transform: translate(1.9em, .9em) rotate(-42deg);
+    -webkit-transform: translate(1.9em, .9em) rotate(-42deg);
+    -o-transform: translate(1.9em, .9em) rotate(-42deg);
+    transform: translate(1.9em, .9em) rotate(-42deg);
+}
+.position_carte.rotation_bas li:nth-child(2) {
+    -moz-transform: translate(1.5em, .5em) rotate(-33deg);
+    -webkit-transform: translate(1.5em, .5em) rotate(-33deg);
+    -o-transform: translate(1.5em, .5em) rotate(-33deg);
+    transform: translate(1.5em, .5em) rotate(-33deg);
+}
+.position_carte.rotation_bas li:nth-child(3) {
+    -moz-transform: translate(1.1em, .3em) rotate(-24deg);
+    -webkit-transform: translate(1.1em, .3em) rotate(-24deg);
+    -o-transform: translate(1.1em, .3em) rotate(-24deg);
+    transform: translate(1.1em, .3em) rotate(-24deg);
+}
+.position_carte.rotation_bas li:nth-child(4) {
+    -moz-transform: translate(.7em, .2em) rotate(-15deg);
+    -webkit-transform: translate(.7em, .2em) rotate(-15deg);
+    -o-transform: translate(.7em, .2em) rotate(-15deg);
+    transform: translate(.7em, .2em) rotate(-15deg);
+}
+.position_carte.rotation_bas li:nth-child(5) {
+    -moz-transform: translate(.3em, .1em) rotate(-6deg);
+    -webkit-transform: translate(.3em, .1em) rotate(-6deg);
+    -o-transform: translate(.3em, .1em) rotate(-6deg);
+    transform: translate(.3em, .1em) rotate(-6deg);
+}
+.position_carte.rotation_bas li:nth-child(6) {
+    -moz-transform: translate(-.1em, .1em) rotate(3deg);
+    -webkit-transform: translate(-.1em, .1em) rotate(3deg);
+    -o-transform: translate(-.1em, .1em) rotate(3deg);
+    transform: translate(-.1em, .1em) rotate(3deg);
+}
+.position_carte.rotation_bas li:nth-child(7) {
+    -moz-transform: translate(-.5em, .2em) rotate(12deg);
+    -webkit-transform: translate(-.5em, .2em) rotate(12deg);
+    -o-transform: translate(-.5em, .2em) rotate(12deg);
+    transform: translate(-.5em, .2em) rotate(12deg);
+}
+.position_carte.rotation_bas li:nth-child(8) {
+    -moz-transform: translate(-.9em, .3em) rotate(21deg);
+    -webkit-transform: translate(-.9em, .3em) rotate(21deg);
+    -o-transform: translate(-.9em, .3em) rotate(21deg);
+    transform: translate(-.9em, .3em) rotate(21deg);
+}
+.position_carte.rotation_bas li:nth-child(9) {
+    -moz-transform: translate(-1.3em, .6em) rotate(30deg);
+    -webkit-transform: translate(-1.3em, .6em) rotate(30deg);
+    -o-transform: translate(-1.3em, .6em) rotate(30deg);
+    transform: translate(-1.3em, .6em) rotate(30deg);
+}
+.position_carte.rotation_bas li:nth-child(10) {
+    -moz-transform: translate(-1.7em, 1em) rotate(39deg);
+    -webkit-transform: translate(-1.7em, 1em) rotate(39deg);
+    -o-transform: translate(-1.7em, 1em) rotate(39deg);
+    transform: translate(-1.7em, 1em) rotate(39deg);
+}
+.position_carte.rotation_bas li:nth-child(11) {
+    -moz-transform: translate(-2.2em, 1.5em) rotate(48deg);
+    -webkit-transform: translate(-2.2em, 1.5em) rotate(48deg);
+    -o-transform: translate(-2.2em, 1.5em) rotate(48deg);
+    transform: translate(-2.2em, 1.5em) rotate(48deg);
+}
+.position_carte.rotation_bas li:nth-child(12) {
+    -moz-transform: translate(-2.8em, 2.1em) rotate(57deg);
+    -webkit-transform: translate(-2.8em, 2.1em) rotate(57deg);
+    -o-transform: translate(-2.8em, 2.1em) rotate(57deg);
+    transform: translate(-2.8em, 2.1em) rotate(57deg);
+}
+.position_carte.rotation_bas li:nth-child(13) {
+    -moz-transform: translate(-3.5em, 2.8em) rotate(66deg);
+    -webkit-transform: translate(-3.5em, 2.8em) rotate(66deg);
+    -o-transform: translate(-3.5em, 2.8em) rotate(66deg);
+    transform: translate(-3.5em, 2.8em) rotate(66deg);
+}
+/* a calculer */
+.position_carte.rotation_bas li:nth-child(14) {
+    -moz-transform: translate(-4.2em, 3.6em) rotate(75deg);
+    -webkit-transform: translate(-4.2em, 3.6em) rotate(75deg);
+    -o-transform: translate(-4.2em, 3.6em) rotate(75deg);
+    transform: translate(-4.2em, 3.6em) rotate(75deg);
+}
+.position_carte.rotation_bas li:nth-child(15) {
+    -moz-transform: translate(-5.1em, 4.4em) rotate(84deg);
+    -webkit-transform: translate(-5.1em, 4.4em) rotate(84deg);
+    -o-transform: translate(-5.1em, 4.4em) rotate(84deg);
+    transform: translate(-5.1em, 4.4em) rotate(84deg);
+}
+.position_carte.rotation_bas li:nth-child(16) {
+    -moz-transform: translate(-6.1em, 5em) rotate(93deg);
+    -webkit-transform: translate(-6.1em, 5em) rotate(93deg);
+    -o-transform: translate(-6.1em, 5em) rotate(93deg);
+    transform: translate(-6.1em, 5em) rotate(93deg);
+}
+
+/* test rotation des cartes de dos du jouer */
+.cartes_joueur {
+    width: 400px;
+    height: 160px;
+    left : 500px;
+    list-style-type: none;
+    font-size: 40px;
+
+}
+.cartes_joueur li {
+    width: 150px;
+    height: 225px;
+    position: absolute;
+    bottom: 0;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    float: left;
+    
+    
+}
+
+/*
+.jeu_rotate_1 {
+    width: 150px;
+    height: 225px;
+    position: absolute;
+    top : 810px;
+    left : 500px;
+    -ms-transform: rotate(-60deg); /* IE 9 
+    -webkit-transform: rotate(-60deg); /* Safari 
+    transform: rotate(-60deg);
+}
+
 */
 

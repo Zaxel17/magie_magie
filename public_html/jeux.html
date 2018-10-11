@@ -6,15 +6,141 @@ and open the template in the editor.
 -->
 <html>
     <head>
-        <title>TODO supply a title</title>
+        <title>Magie Magie</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="css/styleJeu.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
-        <header>AVATAR<h1>Magie Magie</h1></header>
-        <main>
-        </main>
+        <main><div id="tapis">
+                <div class="sort_invisibilite">
+                    <span class="carte_3 taille_carte_sort"></span><span class="carte_5 taille_carte_sort"></span>
+                </div>
+                <div class="sort_philtre">
+                    <span class="carte_3 taille_carte_sort"></span><span class="carte_1 taille_carte_sort"></span>
+                </div>
+                <div class="sort_hypnose">
+                    <span class="carte_5 taille_carte_sort"></span><span class="carte_2 taille_carte_sort"></span>
+                </div>
+                <div class="sort_divination">
+                    <span class="carte_2 taille_carte_sort"></span><span class="carte_4 taille_carte_sort"></span>
+                </div>
+                <div class="sort_sommeil">
+                    <span class="carte_1 taille_carte_sort"></span><span class="carte_4 taille_carte_sort"></span>
+                </div>
+        
+                <div class="avatar_1 avatar_joueur"></div>
+                
+                <ul class="cartes_joueur_adverse_1 position_carte rotation_bas">
+                  <li><div class="carte_dos"></div></li>
+                  <li><div class="carte_dos"></div></li>
+                  <li><div class="carte_dos"></div></li>
+                  <li><div class="carte_dos"></div></li>
+                  <li><div class="carte_dos"></div></li>
+                  <li><div class="carte_dos"></div></li>
+                </ul>
+                <div class="avatar_2 avatar_joueur_adverse_1"></div>
+                
+                <ul class="position_carte cartes_joueur_adverse_2 rotation_bas">
+                  <li><div class="carte_dos"></div></li>
+                  <li><div class="carte_dos"></div></li>
+                  <li><div class="carte_dos"></div></li>
+                  <li><div class="carte_dos"></div></li>
+                  <li><div class="carte_dos"></div></li>
+                  <li><div class="carte_dos"></div></li>
+                </ul>
+                <div class="avatar_3 avatar_joueur_adverse_2"></div>
+                
+                <ul class="cartes_joueur_adverse_3 position_carte rotation_bas">
+                  <li><div class="carte_dos"></div></li>
+                  <li><div class="carte_dos"></div></li>
+                  <li><div class="carte_dos"></div></li>
+                  <li><div class="carte_dos"></div></li>
+                  <li><div class="carte_dos"></div></li>
+                  <li><div class="carte_dos"></div></li>
+                </ul>
+                <div class="avatar_4 avatar_joueur_adverse_3"></div>
+                
+                <ul class="cartes_joueur_adverse_4 position_carte rotation_bas">
+                  <li><div class="carte_dos"></div></li>
+                  <li><div class="carte_dos"></div></li>
+                  <li><div class="carte_dos"></div></li>
+                  <li><div class="carte_dos"></div></li>
+                  <li><div class="carte_dos"></div></li>
+                  <li><div class="carte_dos"></div></li>
+                  <li><div class="carte_dos"></div></li>
+                  <li><div class="carte_dos"></div></li>
+                  <li><div class="carte_dos"></div></li>
+                  <li><div class="carte_dos"></div></li>
+                  <li><div class="carte_dos"></div></li>
+                  <li><div class="carte_dos"></div></li>
+                  <li><div class="carte_dos"></div></li>
+                  <li><div class="carte_dos"></div></li>
+                </ul>
+                <div class="avatar_5 avatar_joueur_adverse_4"></div>
+                
+                <ul class="cartes_joueur">
+                  <li><div class="carte_1 taille_carte_normal"></div></li>
+                  <li><div class="carte_2 taille_carte_normal"></div></li>
+                  <li><div class="carte_3 taille_carte_normal"></div></li>
+                </ul>
+                
+            </div></main>
         <footer>Copyright 2018   JC | Axel</footer>
+<script src="js/jquery-3.3.1.js" type="text/javascript"></script>
+<script> 
+$(document).ready(function() {	
+    /* rayon = 100px
+     * Position x = cos(angle)xrayon
+     *                   
+                  <li><div class="carte_2 taille_carte_normal"></div></li>
+                  <li><div class="carte_3 taille_carte_normal"></div></li>
+                  <li><div class="carte_3 taille_carte_normal"></div></li>
+                  <li><div class="carte_3 taille_carte_normal"></div></li>
+                  <li><div class="carte_4 taille_carte_normal"></div></li>
+                  <li><div class="carte_4 taille_carte_normal"></div></li>
+                  <li><div class="carte_5 taille_carte_normal"></div></li>
+                  <li><div class="carte_5 taille_carte_normal"></div></li>
+                  <li><div class="carte_1 taille_carte_normal"></div></li>
+                  <li><div class="carte_2 taille_carte_normal"></div></li>
+                  <li><div class="carte_3 taille_carte_normal"></div></li>
+     * 
+     * 
+     * 
+     */
+    var nombre_de_cartes_test = 3;
+    var rayon = 100;
+    var degIncrementer = 10;
+    var degree = 20; /* valeur intial */
+    var topInit = 800;
+    var leftInit = 500;
+    
+    for(i=0;i<nombre_de_cartes_test;i++) {
+      $('.cartes_joueur li:eq('+i+')').css("transform","rotate("+degree+"deg)");
+      posX = Math.round((Math.cos(degree)*rayon)+leftInit);
+      posY = Math.round((Math.sin(degree)*rayon)+topInit);
+      $('.cartes_joueur li:eq('+i+')').css("top",posY+"px");
+      $('.cartes_joueur li:eq('+i+')').css("left",posX+"px");
+      degree = degree + degIncrementer;
+      
+      
+
+    }
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+});			
+</script>
+}
     </body>
 </html>
