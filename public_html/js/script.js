@@ -5,9 +5,10 @@
  */
 
 function validerInscription() {
-    var p = $('#pseudo').val()
+    var p = $('#pseudo').val();
     var s = mycarousel.getCurrentSlide();
-    alert("Inscription Valider\nBonjour : "+s+" "+s.attr("id"));
+    var t = s.attr("id")[1];
+    alert("Inscription Valider\nBonjour : "+p+" "+t);
     //console.log(s.attr("id"));
     //alert(s.attr('name'));
     document.location.href="listePartie.html";

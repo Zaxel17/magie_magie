@@ -7,8 +7,16 @@ and open the template in the editor.
     Created on : 10 oct. 2018, 16:00:32
     Author     : Administrateur
 */
+@font-face {
+    font-family: arhermann;
+    src: url(img/ARHERMANN.ttf);
+}
+
 body{
-    background-color: #250404; 
+    background-color: #250404;
+    font-family: 'arhermann';
+    font-size: x-large;
+    /*font-style: oblique;*/
 }
 
 main {
@@ -16,17 +24,13 @@ main {
     background-repeat: no-repeat; 
     height: 1080px;
     width: 1920px;
+    font-size: x-large;
 }
 
 footer{
    background-color: #FF5700;
    width: 1920px;
-}
-
-td{
-    height: 50px;
-    width: 50px;
-    background-color: white;
+   font-size: x-large;
 }
 
 td:hover{
@@ -36,13 +40,15 @@ td:hover{
 input{
     font-size: x-large;
     margin: 10px;
+    font-family: 'arhermann';
 }
 
 li{
     font-size : x-large;
     border-bottom: 1px solid #ccc;
+    list-style: none;
     display: inline-block;
-    
+    font-size: x-large;
 }
 
 li:last-child {
@@ -71,10 +77,12 @@ li:hover{
     border-style: solid;
     border-radius: 25px;
     text-align: center;
+    font-size: x-large;
 }
 
 .divButtonValidation{
     text-align: center;
+    font-size: x-large;
 }
 
 #pseudo{
@@ -91,6 +99,7 @@ li:hover{
     border-style: solid;
     border-radius: 25%; 
     text-align: center;
+    font-size: x-large;
 }
 
 .carousel{
