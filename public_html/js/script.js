@@ -26,17 +26,6 @@ function lancerPartie() {
 }
 
 
-var slides = [
-    {src: 'img/avatars/avatar_1.png'},
-    {src: 'img/avatars/avatar_2.png'},
-    {src: 'img/avatars/avatar_3.png'},
-    {src: 'img/avatars/avatar_4.png'},
-    {src: 'img/avatars/avatar_5.png'},
-    {src: 'img/avatars/avatar_6.png'},
-    {src: 'img/avatars/avatar_7.png'},
-    {src: 'img/avatars/avatar_8.png'}
-];
-
 var mycarousel = $('.carousel').jR3DCarousel({
     width: 200,
     height: 300,
