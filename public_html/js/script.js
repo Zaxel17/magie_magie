@@ -5,11 +5,12 @@
  */
 
 function validerInscription() {
-//    var s = $('#pseudo').val()
-//    alert("Inscription Valider\nBonjour : "+s);
+    var p = $('#pseudo').val()
     var s = mycarousel.getCurrentSlide();
-    //document.location.href="listePartie.html";
-    alert(s);
+    alert("Inscription Valider\nBonjour : "+s+" "+s.attr("id"));
+    //console.log(s.attr("id"));
+    //alert(s.attr('name'));
+    document.location.href="listePartie.html";
 }
 
 function creerPartie() {
@@ -36,32 +37,18 @@ var slides = [
 ];
 
 var mycarousel = $('.carousel').jR3DCarousel({
-    // width of the carousel
     width: 200,
-    // height of the carousel
     height: 300,
-    // an array of images
-    slides: slides,
-    // contain | fill | cover
     slideLayout: 'fill',
-    // perspective | default dynamic perpendicular
-    perspective: 0,
-    // slide | slide3D | scroll | scroll3D | fade
-    animation: 'fade',
-    // ease | ease-in | ease-out | ease-in-out | linear | bezier
+    perspective: 550,
+    animation: 'slide3D',
     animationCurve: 'ease',
-    // animation duration
     animationDuration: 700,
-    // animation interval
     animationInterval: 2000,
-    // enable autoplay
     autoplay: false,
-    // display controls
     controls: true,
-    slideClass: 'jR3DCarouselSlide',
-    // circles | squares
-    navigation: 'squares',
-    // callback
+    slideClass: 'mySlide',
+    navigation: 'cirles',
     onSlideShow: function () {}
 });
 

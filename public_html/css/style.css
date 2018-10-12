@@ -39,8 +39,10 @@ input{
 }
 
 li{
-  font: 200 20px/1.5 Helvetica, Verdana, sans-serif;
-  border-bottom: 1px solid #ccc;
+    font-size : x-large;
+    border-bottom: 1px solid #ccc;
+    display: inline-block;
+    
 }
 
 li:last-child {
@@ -67,7 +69,7 @@ li:hover{
     margin-top: 300px;
     padding: 20px;
     border-style: solid;
-    border-radius: 25%;
+    border-radius: 25px;
     text-align: center;
 }
 
@@ -94,9 +96,5 @@ li:hover{
 .carousel{
     margin: 0 auto;
     text-align: center;
-    
 }
 
-li{
-    text-align: left;
-}
