@@ -4,7 +4,7 @@ body {
 footer {
     color : white;
     text-align: center;
-	font-size: 36px;
+    font-size: 36px;
 }
 main {
     width: 1920px;
@@ -56,9 +56,18 @@ main {
     height: 225px;
     background-size: 150px 225px;     
 }
-/* test rotation des cartes de dos des joueurs adverses */
+.cartes_joueur .carte_1:hover, .cartes_joueur .carte_2:hover, .cartes_joueur .carte_3:hover, .cartes_joueur .carte_4:hover, .cartes_joueur .carte_5:hover{
+    transform: scale(1.2);
+}
+
+.cartes_joueur .carte_1:active, .cartes_joueur .carte_2:active, .cartes_joueur .carte_3:active, .cartes_joueur .carte_4:active, .cartes_joueur .carte_5:active{
+    transform: translateY(-150px);
+    z-index: 1;
+}
+
+
 /* sorts */
-.sort_invisibilite, .sort_philtre, .sort_hypnose, .sort_divination, .sort_sommeil {
+#sort_0, #sort_1, #sort_2, #sort_3, #sort_4 {
 width: 200px;
 height: 150px;
 margin : auto;
@@ -74,7 +83,7 @@ display: inline-block;
 INVISIBILITE: le joueur prend 1 carte(au hasard) chez tous ses adversaires
 Ingrédients: corne de licorne (carte_3) + bave de crapaud (carte_5)
 */
-.sort_invisibilite {
+#sort_0 {
 top : 50px;
 right : 20px;
 }
@@ -82,7 +91,7 @@ right : 20px;
 PHILTRE D’AMOUR: le joueur de votre choix vous donne la moitié de ses cartes(au hasard). S’il ne possède qu’une carte il a perdu:
 Ingrédients: corne de licorne (carte_3) + mandragore (carte_1)
 */
-.sort_philtre {
+#sort_1 {
 top : 266px;
 right : 20px;  
 }
@@ -90,7 +99,7 @@ right : 20px;
 HYPNOSE: le joueur échange une carte de son choix contre trois cartes(au hasard) de la victime qu’il choisit
 Ingrédients: bave de crapaud (carte_5) + lapis-lazuli (carte_2)
 */
-.sort_hypnose {
+#sort_2 {
 top : 482px;
 right : 20px;  
 }
@@ -98,7 +107,7 @@ right : 20px;
 DIVINATION: le joueur peut voir les cartes de tous les autres joueurs
 Ingrédients: lapis-lazuli (carte_2) + aile-de chauve-souris (carte_4)
 */
-.sort_divination {
+#sort_3 {
 top : 698px;
 right : 20px;  
 }
@@ -106,7 +115,7 @@ right : 20px;
 SOMMEIL-PROFOND: le joueur choisit une victime qui ne pourra pas lancer de sorts pendant 2 tours
 Ingrédients: mandragore (carte_1) + aile de chauve-souris (carte_4)
 */
-.sort_sommeil {
+#sort_4 {
 top : 914px;
 right : 20px;   
 }
@@ -133,8 +142,20 @@ right : 20px;
     top : 780px;
     left : 220px; 
 }
+.nom_joueur {
+    background-size: 300px 40px;
+    position: absolute;
+    background-color: #259999;
+    width: 300px;
+    left : 170px;
+    height: 60px;
+    top : 1000px;
+    color : white;
+    text-align: center;
+    font-size: 22px;    
+}
 
-.avatar_joueur_adverse_1, .avatar_joueur_adverse_2, .avatar_joueur_adverse_3, .avatar_joueur_adverse_4 {
+.avatar_joueur_adverse {
     background-size: 150px 200px;
     position: absolute;
     background-repeat : no-repeat;
@@ -142,11 +163,18 @@ right : 20px;
     height: 200px;
     top : 20px;
 }
-.avatar_joueur_adverse_1 { left : 130px; }
-.avatar_joueur_adverse_2 { left : 545px; }
-.avatar_joueur_adverse_3 { left : 960px; }
-.avatar_joueur_adverse_4 { left : 1375px; }
 
+.nom_joueur_adverse {
+    background-size: 200px 40px;
+    position: absolute;
+    background-color: #259999;
+    width: 200px;
+    height: 40px;
+    top : 160px;
+    color : white;
+    text-align: center;
+    font-size: 18px;    
+}
 
 /* Positionnement des cartes des joueurs adverses */
 
@@ -164,8 +192,7 @@ right : 20px;
     bottom: 0;
     margin: 0;
     padding: 0;
-    list-style-type: none;
-    float: left;   
+    list-style-type: none; 
 }
 
 .joueur_adverse_1 { left : 0px;    }
@@ -181,7 +208,6 @@ right : 20px;
     left : 500px;
     list-style-type: none;
     font-size: 40px;
-
 }
 .cartes_joueur li {
     width: 150px;
@@ -191,9 +217,6 @@ right : 20px;
     margin: 0;
     padding: 0;
     list-style-type: none;
-    float: left;
-    
-    
 }
 
 

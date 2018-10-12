@@ -1,66 +1,103 @@
 $(document).ready(function() {	
 
-function afficherCartesJoueurAdverse(id,nombre_de_cartes,topInit,leftInit) {
-	degree = 360;
+var test = '';
+
+var jeuHTML = ''; /* toute la construction HTML du jeu */
+var avatars_joueurs = [1,3,5,8,2]; /* les avatars pour chaques joueurs */
+var cartes_joueur = []; /* contient les cartes de chaque joueur */
+var noms_joueur = ['PAULETTE','CRAPAUD','TOTOCHE','DUDULE','BILOUTE']; /* contient les noms de chaque joueur */  
+
+    /* pour le test, remplissage pour 5 joueurs */  
+    cartes_joueur[0]=[1,1,1,2,2,2,5,5,5,2]; 
+    cartes_joueur[1]=[1,1,1,5];
+    cartes_joueur[2]=[1,1,1,2,2,5,5,5];
+    cartes_joueur[3]=[1,1,1,2,2,2,3,3,3,3,4,4,4,4,5,5,5,5];
+    cartes_joueur[4]=[1,1,1,2,2,2,3,3,3,3,4,4,4,4,5,5,5,5,5,5];
+    /* états des 5 sorts disponnible renvoyé aprés analyse du jeu */
+    var sortsDisponible = [true,false,true,true,false]; 
+    
+var nombre_de_joueurs = 4; /* cartes_joueur.length;  nombre de joueur minimum = 2 */
+
+/* JOUEUR PRINCIPAL */
+jeuHTML += '<div class="avatar_'+avatars_joueurs[0]+' avatar_joueur"></div><div class="nom_joueur">'+noms_joueur[0]+'</div><ul class="cartes_joueur">';
+for(cj=0;cj<cartes_joueur[0].length;cj++) { jeuHTML += '<li><div class="carte_'+cartes_joueur[0][cj]+' taille_carte_normal"></div></li>'; }
+jeuHTML += '</ul>';
+                
+/* POUR LES JOUEURS ADVERSES */
+for(jadv=1;jadv<nombre_de_joueurs;jadv++) {
+jeuHTML += '<ul class="cartes_joueur_adverse joueur_adverse_'+jadv+'">';
+for(cja=0;cja<cartes_joueur[jadv].length;cja++) { jeuHTML += '<li><div class="carte_dos"></div></li>'; }
+jeuHTML += '</ul><div class="avatar_'+avatars_joueurs[jadv]+' avatar_joueur_adverse" id="joueur_'+jadv+'"></div><div class="nom_joueur_adverse" id="nom_joueur_'+jadv+'">'+noms_joueur[jadv]+'</div>';
+}       
+
+/* AFFICHAGE DES TABLES INITIALE */
+document.getElementById('jeu').innerHTML = jeuHTML; 
+ 
+// Mise en éventails des cartes */
+function afficherCartesEnEventaille(idHTML,nombre_de_cartes,rayon,radInit,limitRad,topInit,leftInit) {
+    rad = radInit;
     for(i=0;i<nombre_de_cartes;i++) { 
-	  degRotate = degree-90;
-      $('.joueur_adverse_'+id+' li:eq('+i+')').css("transform","rotate("+degRotate+"deg)");
-	/*  $('.joueur_adverse_'+id+' li:eq('+i+')').css("-moz-transform","rotate("+degRotate+"deg)");
-	  $('.joueur_adverse_'+id+' li:eq('+i+')').css("-webkit-transform","rotate("+degRotate+"deg)");
-	  $('.joueur_adverse_'+id+' li:eq('+i+')').css("-o-transform","rotate("+degRotate+"deg)");	*/
-	  rad  = degree/57.2;
-      posX = Math.round((Math.cos(rad)*130)+leftInit);
-      posY = Math.round((Math.sin(rad)*130)+topInit);
-      $('.joueur_adverse_'+id+' li:eq('+i+')').css("top",posY+"px");
-      $('.joueur_adverse_'+id+' li:eq('+i+')').css("left",posX+"px");
-      degree = degree + Math.round(200/nombre_de_cartes);
+        radRotate = rad+1;
+        $('.'+idHTML+' li:eq('+i+')').css("transform","rotate("+radRotate+"rad)");
+        $('.'+idHTML+' li:eq('+i+')').css("-moz-transform","rotate("+radRotate+"rad)");
+        $('.'+idHTML+' li:eq('+i+')').css("-webkit-transform","rotate("+radRotate+"rad)");
+	$('.'+idHTML+' li:eq('+i+')').css("-o-transform","rotate("+radRotate+"rad)");
+        posX = Math.round((Math.cos(rad)*rayon)+leftInit);
+        posY = Math.round((Math.sin(rad)*rayon)+topInit);
+        $('.'+idHTML+' li:eq('+i+')').css("top",posY+"px");
+        $('.'+idHTML+' li:eq('+i+')').css("left",posX+"px");
+        rad = rad + (limitRad/nombre_de_cartes);
     }
 }
 
-/* Joueur Adverse 1 */	
-	afficherCartesJoueurAdverse(1,5,120,160); 
-	
-/* Joueur Adverse 2 */
-	afficherCartesJoueurAdverse(2,8,120,575); 
-	
-/* Joueur Adverse 3 */
-	afficherCartesJoueurAdverse(3,10,120,990); 
+/* Cartes du Joueur */	
+        afficherCartesEnEventaille('cartes_joueur',cartes_joueur[0].length,600,16.6,1.5,1300,860); 
+        
+/* Joueur Adverse */
+if      (nombre_de_joueurs===3) { posLeft = 521; posLeftIncrementation = 521; }
+else if (nombre_de_joueurs===4) { posLeft = 300; posLeftIncrementation = 482; }
+else if (nombre_de_joueurs===5) { posLeft = 160; posLeftIncrementation = 415; }
+else { posLeft = 782; posLeftIncrementation = 0; } // 2 joueurs
 
-/* Joueur Adverse 4 */
-	afficherCartesJoueurAdverse(4,20,120,1405); 
-	
-/* Cartes du Joueur  */	
-    var nombre_de_cartes = 20;
-    var degree = 65; 
-    var topInit = 1650;
-    var leftInit = 840;
+for(j=1;j<nombre_de_joueurs;j++) {
+     afficherCartesEnEventaille('joueur_adverse_'+j,cartes_joueur[j].length,130,12.2,4,120,posLeft);
+     $('#joueur_'+j).css("left",(posLeft-30)+"px"); /* AVATARS */
+     $('#nom_joueur_'+j).css("left",(posLeft-55)+"px"); /* NOM DU JOUEUR */
+     posLeft = posLeft + posLeftIncrementation;
+ }
 
-    for(i=0;i<nombre_de_cartes;i++) {
-	  degRotate = degree-90;
-      $('.cartes_joueur li:eq('+i+')').css("transform","rotate("+degRotate+"deg)");
-	  $('.cartes_joueur li:eq('+i+')').css("-moz-transform","rotate("+degRotate+"deg)");
-	  $('.cartes_joueur li:eq('+i+')').css("-webkit-transform","rotate("+degRotate+"deg)");
-	  $('.cartes_joueur li:eq('+i+')').css("-o-transform","rotate("+degRotate+"deg)");
-	  rad  = degree/57.2;
-      posX = Math.round(leftInit-(Math.cos(rad)*900));
-      posY = Math.round(topInit-(Math.sin(rad)*900));
-      $('.cartes_joueur li:eq('+i+')').css("top",posY+"px");
-      $('.cartes_joueur li:eq('+i+')').css("left",posX+"px");
-      degree = degree + Math.round(60/nombre_de_cartes);
-    }
+/* MASQUES SUR LES COMBINAISONS DE SORT
+    0 = sort_invisibilite
+    1 = sort_philtre
+    2 = sort_hypnose
+    3 = sort_divination
+    4 = sort_sommeil
+*/
+for(sort=0;sort<5;sort++) {
+    if (sortsDisponible[sort]===true) { 
+        $('#sort_'+sort).css("border-color","#FF5700");
+        $('#sort_'+sort).css("border-size","5px");
+        $('#sort_'+sort).css("border-style","solid");
+        $('#sort_'+sort).css("border-radius","10px");
+        $('#sort_'+sort).css("background-color","#FF5700");
+        $('#sort_'+sort+' span').attr("title","Sort disponible, Cliquez pour l'utiliser"); } 
+    else { 
+        $('#sort_'+sort+' span').css("opacity",".50");
+        $('#sort_'+sort+' span').attr("title","Sort indisponible"); }
+}                            
 
-    
     /*
     
         // TEST **************************************************
-	var test = '';
+	test  += j+' ==>>> posLeft='+posLeft+' <br/>';
 	test  += i+' ==>>> Degrée='+degree+'° / Gauche posX='+posX+' / TOP posY='+posY+'<br/>';
-    // document.getElementById('test').innerHTML = "<br />" + test;
+    
     // FIN TEST ********************************************** 
     */
 
-    
-    
+   
+     
+    document.getElementById('test').innerHTML = "<br />" + test;    
     
 });	
 
