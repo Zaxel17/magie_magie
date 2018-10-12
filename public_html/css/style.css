@@ -55,7 +55,7 @@ li:last-child {
   border: none;
 }
 
-li:hover{
+lili:hover{
     background-color: black;
     color: white;
 }
@@ -107,3 +107,11 @@ li:hover{
     text-align: center;
 }
 
+.carte_1:hover, .carte_2:hover, .carte_3:hover, .carte_4:hover, .carte_5:hover{
+    transform: scale(1.2);
+}
+
+.carte_1:active, .carte_2:active, .carte_3:active, .carte_4:active, .carte_5:active{
+    transform: translateY(-150px);
+    z-index: 1;
+}

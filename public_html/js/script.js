@@ -21,8 +21,7 @@ function creerPartie() {
 }
 
 function lancerPartie() {
-    alert("Partie lancer");
-    //document.location.href="jeux.html";
+    document.location.href="jeux.html";
 }
 
 
