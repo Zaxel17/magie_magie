@@ -20,7 +20,17 @@ main {
     width: 1920px;
     height: 1080px;
 }
+/* PIOCHE */
+#pioche {
+    background-image: url('../img/cartes/carte_dos.png');
+    z-index : 20;
 
+}
+.position_pioche {
+    position: absolute;
+    top : 440px;
+    left : 1200px;     
+}
 /* CARTES */
 .carte_1, .carte_2, .carte_3, .carte_4, .carte_5, .carte_dos {
     background-repeat : no-repeat;  
@@ -58,10 +68,12 @@ main {
 }
 .cartes_joueur .carte_1:hover, .cartes_joueur .carte_2:hover, .cartes_joueur .carte_3:hover, .cartes_joueur .carte_4:hover, .cartes_joueur .carte_5:hover{
     transform: scale(1.2);
+    transition: all .3s ease;
 }
 
 .cartes_joueur .carte_1:active, .cartes_joueur .carte_2:active, .cartes_joueur .carte_3:active, .cartes_joueur .carte_4:active, .cartes_joueur .carte_5:active{
     transform: translateY(-150px);
+    transition: all .3s ease;
     z-index: 1;
 }
 
@@ -140,19 +152,21 @@ right : 20px;
     width: 200px;
     height: 300px;
     top : 780px;
-    left : 220px; 
+    left : 225px; 
+    z-index : 30;
 }
 .nom_joueur {
-    background-size: 300px 40px;
+    background-size: 300px 60px;
     position: absolute;
-    background-color: #259999;
+    background-image: url('../img/nom.png');
     width: 300px;
-    left : 170px;
+    left : 175px;
     height: 60px;
-    top : 1000px;
-    color : white;
+    top : 1007px;
+    color : black;
     text-align: center;
-    font-size: 22px;    
+    font-size: 24px; 
+    z-index : 40;
 }
 
 .avatar_joueur_adverse {
@@ -162,29 +176,23 @@ right : 20px;
     width: 150px;
     height: 200px;
     top : 20px;
+    z-index : 30;
 }
 
 .nom_joueur_adverse {
     background-size: 200px 40px;
     position: absolute;
-    background-color: #259999;
+    background-image: url('../img/nom.png');
     width: 200px;
     height: 40px;
-    top : 160px;
-    color : white;
+    top : 173px;
+    color : black;
     text-align: center;
-    font-size: 18px;    
+    font-size: 20px; 
+    z-index : 40;
 }
 
 /* Positionnement des cartes des joueurs adverses */
-
-.cartes_joueur_adverse {
-    width: 400px;
-    height: 160px;
-    list-style-type: none;
-    font-size: 40px;
-
-}
 .cartes_joueur_adverse li {
     width: 100px;
     height: 150px;
@@ -192,23 +200,13 @@ right : 20px;
     bottom: 0;
     margin: 0;
     padding: 0;
-    list-style-type: none; 
+    list-style-type: none;
+    top : 440px;
+    left : 1200px;
+    z-index : 10;
 }
-
-.joueur_adverse_1 { left : 0px;    }
-.joueur_adverse_2 { left : 400px;  }
-.joueur_adverse_3 { left : 800px;  }
-.joueur_adverse_4 { left : 1200px; }
 
 /* Positionnement des cartes dujoueur */
-
-.cartes_joueur {
-    width: 400px;
-    height: 160px;
-    left : 500px;
-    list-style-type: none;
-    font-size: 40px;
-}
 .cartes_joueur li {
     width: 150px;
     height: 225px;
@@ -217,6 +215,9 @@ right : 20px;
     margin: 0;
     padding: 0;
     list-style-type: none;
+    top : 440px;
+    left : 1200px;
+    z-index : 10;
 }
 
 
